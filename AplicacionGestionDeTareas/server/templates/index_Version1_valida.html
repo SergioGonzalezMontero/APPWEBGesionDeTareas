@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGNIS - GESTIÓN DE TICKETS Y EMAILS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="agent-selection">
+            <label for="agentName">Nombre del Agente:</label>
+            <select id="agentName">
+                <option value="Vacio"></option>
+                <option value="Adelaida">Adelaida</option>
+                <option value="Ana">Ana</option>
+				<option value="Elena">Elena</option>
+                <option value="Estefanía">Estefanía</option>
+                <option value="Gema">Gema</option>
+                <option value="Juan David">Juan David</option>
+                <option value="Sara">Sara</option>
+            </select>
+        </div>
+		<div>
+			<label for="tiempoTicket">Tiempo invertido (MINUTOS):</label><br />
+			<input type="text" id="tiempoTicket">
+		</div>
+		
+        <div class="timer-controls">
+            <div class="timer" id="timer">00:00:00</div>
+            <div class="controls">
+                <!--<button id="startButton">Iniciar</button>-->
+                <button id="pauseButton" disabled>Pausar</button>
+                <button id="resumeButton" disabled>Reanudar</button>
+                <button id="endButton" disabled>Finalizar</button>
+            </div>
+        </div>
+    </header>
+
+    <h3 class="title">Ignis Gestión de Tickets &amp; Emails</h3>
+
+    <table class="formulario">
+        <thead>
+            <tr>
+                <th colspan="3">
+                    TIPO DE TRANSACCIÓN<br /><br />
+                    <select id="transactionType">
+                        <option value=""></option>
+                        <option value="MAIL">MAIL</option>
+                        <option value="TICKET">TICKET</option>
+						<option value="DOCUMENTO">ENVIO DOCUMENTO</option>
+                        <option value="GESTIONINTERNA">GESTION INTERNA BO</option>
+						<option value="INCIDENCIAINTERNA">INCIDENCIA INTERNA</option>
+						<option value="INCIDENCIAEXTERNA">INCIDENCIA EXTERNA</option>
+                    </select>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr id="ticketRow">
+                <td>
+                    <label for="ticketNumber">Nº de Ticket:</label><br />
+                    <input type="text" id="ticketNumber">
+                </td>
+                <td>
+                    <label for="ticketSubject">Asunto:</label><br />
+                    <select id="ticketSubject" onchange="populateReasons('ticket')">
+                        <option value=""></option>
+                        <option value="Consulta">Consulta</option>
+                        <option value="Gestion">Gestión</option>
+                        <option value="Reclamacion">Reclamación</option>
+                        <!--<option value="Otros">Otros</option>-->
+                    </select>
+                </td>
+                <td>
+                    <label for="ticketReason">Motivo:</label><br />
+                    <select id="ticketReason"></select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label for="observaciones">Observaciones:</label><br />
+                    <textarea id="observaciones" style="width: 100%; height: 100px;"></textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

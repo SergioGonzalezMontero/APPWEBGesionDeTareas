@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESION DE TAREAS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+
+    </header>
+
+    <table class="formulario">
+        <thead>
+            <tr>
+                <th colspan="2"><h2>GESION DE TAREAS</h2></th>
+            </tr>
+
+            <tr>
+
+                <th colspan="2" id="detalle-tarea2"></th>
+            </tr>
+            <tr>
+
+                <th colspan="2" id="detalle-tarea"></th>
+            </tr>
+
+            <tr>
+                <th colspan="2"></th>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <div class="agent-selection">
+                        <label for="agentName">Nombre del Agente:</label>
+                        <select id="agentName">
+                            <option value="VACIO"></option>
+                            <option value="ADELAIDA">ADELAIDA</option>
+                            <option value="ANA">ANA</option>
+                            <option value="ELENA">ELENA</option>
+                            <option value="ESTEFANIA">ESTEFANÍA</option>
+                            <option value="GEMA">GEMA</option>
+                            <option value="JUAN DAVID">JUAN DAVID</option>
+                            <option value="SARA">SARA</option>
+                            <option value="SUSANA">SUSANA</option>
+                        </select>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="ticketRow">
+                <td>
+                    <label for="ticketNumber">Nº de Contrato:</label><br />
+                    <input type="text" id="ticketNumber">
+                </td>
+                <td>
+                    <label>Comercializadoras:</label>
+                    <div class="radio-group">
+                        <div>
+                            <label for="IGNIS">EMPRESA1</label>
+                            <input type="radio" id="EMPRESA1" name="COMERCIALIZADORAS" value="EMPRESA1">
+                        </div>
+                        <div>
+                            <label for="CANDELA">EMPRESA2</label>
+                            <input type="radio" id="EMPRESA2" name="COMERCIALIZADORAS" value="EMPRESA2">
+                        </div>
+                        <div>
+                            <label for="COLORS">EMPRESA3</label>
+                            <input type="radio" id="EMPRESA3" name="COMERCIALIZADORAS" value="EMPRESA3">
+                        </div>
+                        <div>
+                            <label for="ALMA">EMPRESA4</label>
+                            <input type="radio" id="EMPRESA4" name="COMERCIALIZADORAS" value="EMPRESA4">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ticketSubject">Asunto:</label><br />
+                    <select id="ticketSubject">
+                       <!-- <option value=""></option>
+                        <option value="CONSULTA">CONSULTA</option>
+                        <option value="GESTION">GESTIÓN</option>
+                        <option value="RECLAMACIONFACTURACION">RECLAMACIÓN FACTURACIÓN</option>
+                        <option value="RECLAMACIONATR">RECLAMACIÓN ATR</option>
+                        <option value="RECLAMACIONDEUDA">RECLAMACIÓN DEUDA</option>
+                        <option value="RECLAMACIONATTCLIENTE">RECLAMACION ATT CLIENTE</option>
+                        <option value="INCIDENCIA">INCIDENCIA</option> -->
+                    </select>
+                </td>
+                <td>
+                    <label for="transactionType">Tipo:</label><br />
+                    <select id="transactionType">
+                        <option value=""></option>
+                        <option value="MAIL">MAIL</option>
+                        <option value="TICKET">TICKET</option>
+                        <option value="DOCUMENTO">ENVIO DOCUMENTO</option>
+                        <option value="GESTIONINTERNA">GESTION INTERNA BO</option>
+                        <option value="INCIDENCIAINTERNA">INCIDENCIA INTERNA</option>
+                        <option value="INCIDENCIAEXTERNA">INCIDENCIA EXTERNA</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="OBSERVACIONES">Observaciones:</label><br />
+                    <textarea id="OBSERVACIONES"></textarea>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="formulario">
+        <tr>
+            <td>
+        <div>
+            <label for="tiempoTicket">Tiempo invertido (MINUTOS):</label><br />
+            <input type="text" id="tiempoTicket">
+        </div>
+            </td>
+
+            <td>
+                <div class="checkbox-container">
+                    <label for="mismoTicket">Click aquí para añadir otra gestión del mismo contrato:</label>
+                    <input type="checkbox" id="mismoTicket">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = "2">
+        <div class="controls" >
+            <button id="endButton">Finalizar</button>
+        </div>
+            </td>
+        </tr>
+    </table>
+    <div class="timer-controls">
+            <div class="timer" id="timer">00:00:00</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
+

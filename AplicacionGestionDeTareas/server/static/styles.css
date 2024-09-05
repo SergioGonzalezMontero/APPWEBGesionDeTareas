@@ -1,0 +1,283 @@
+/* Estilos Generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 20px;
+    padding: 0;
+}
+
+#transactionType {
+    font-size: 0.8em;
+    padding: 10px;
+    width: 100%;
+}
+
+/* Contenedor Principal */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Temporizador */
+.timer {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #007bff;
+    opacity: 0;
+    display: inline-block;
+    margin: 0 20px;
+}
+
+/* Controles del Temporizador */
+
+.controls {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido del contenedor */
+    margin: 20px 0; /* Margen opcional para separación */
+}
+
+#endButton {
+    background-color: #dc3545;
+    color: white;
+    width: 30%;
+    padding: 10px 0; /* Ajusta el relleno para mantener una altura cómoda */
+    font-size: 1.5em; /* Ajusta el tamaño de la fuente para mantener una apariencia consistente */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#endButton:hover {
+    background-color: #c82333;
+}
+
+#detalle-tarea{
+    font-size: 1em;
+    color: yellow;
+    text-align: center;
+}
+
+#detalle-tarea2{
+    font-size: 1em;
+    color: yellow;
+    text-align: center;
+}
+
+#detalle-tarea_2{
+    font-size: 1em;
+    color: yellow;
+    text-align: right;
+}
+
+#detalle-tarea2_2 {
+    font-size: 1em;
+    color: yellow;
+    text-align: right; /* Alinea el texto a la derecha */
+}
+
+/* Estilos generales para el checkbox y su contenedor */
+.checkbox-container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos en una columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+    margin: 10px 0; /* Margen opcional para separación */
+}
+
+.checkbox-container label {
+    font-size: 1em;
+    margin-bottom: 5px; /* Espacio entre el label y el checkbox */
+    display: block; /* Hace que el label ocupe toda la línea */
+}
+
+/* Escalar el tamaño del checkbox */
+.checkbox-container input[type="checkbox"] {
+    width: 20px; /* Ancho del checkbox */
+    height: 20px; /* Alto del checkbox */
+    transform: scale(1.5); /* Escalar el checkbox */
+}
+
+/* Selección del Agente */
+.agent-selection {
+    margin: 5px 0;
+    text-align: center;
+}
+
+
+.agent-selection label {
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+}
+
+.agent-selection select {
+    width: 7.5em;
+    padding: 5px;
+    font-size: 1em;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Encabezado */
+h3 {
+    color: #007bff;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+/*Buscador*/
+#ticketSubject{
+    width: 100%;
+
+
+}
+
+/* Tabla del Formulario */
+.formulario {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.formulario thead th {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    padding: 5px;
+
+}
+
+.formulario tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.formulario td {
+    padding: 15px;
+    font-size: 1em;
+    width: 50%; /* Ajustar el ancho de las columnas */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+.formulario td input[type="text"],
+.formulario td input[type="email"],
+.formulario td textarea,
+.formulario td select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    width: 100%; /* Ocupa el ancho completo de la columna */
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+}
+
+.formulario td label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Botón de Enviar */
+.formulario td .btn {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: #28a745;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.formulario td .btn:hover {
+    background-color: #218838;
+}
+
+/* Observaciones */
+.observaciones-container td:first-child {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 10px;
+    vertical-align: top;
+}
+
+.observaciones-container td:last-child {
+    width: 100%;
+}
+#OBSERVACIONES{
+    text-transform: uppercase;
+}
+
+/* Radio Buttons en línea */
+.radio-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.radio-group input[type="radio"] {
+    margin-left: 15px;
+    width: 20px; /* Ancho del checkbox */
+    height: 20px; /* Alto del checkbox */
+    transform: scale(1.3); /* Escalar el checkbox */
+}
+
+.radio-group label {
+    margin-right: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timer-controls {
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    .formulario td {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .formulario thead {
+        display: none;
+    }
+
+    .formulario tr {
+        margin-bottom: 15px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .formulario td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
